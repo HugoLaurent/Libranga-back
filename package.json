@@ -1,0 +1,24 @@
+{
+  "name": "libranga-back",
+  "version": "1.0.0",
+  "description": "Libranga Blog is a web application dedicated to manga enthusiasts. It provides a platform for users to share and explore articles related to manga and its various genres.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiDeVShK/Libranga-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiDeVShK/Libranga-back/issues"
+  },
+  "homepage": "https://github.com/MiDeVShK/Libranga-back#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "pg": "^8.11.1"
+  }
+}
