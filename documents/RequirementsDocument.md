@@ -76,7 +76,7 @@ The objective of the project is to create a blog that is accessible to all visit
 | /api/homepage                      | GET    | HomeController     | getAllData     | Get all the homepage's needs      |
 |                                    |        |                    |                |                                   |
 |                                    |        | USER               |                |                                   |
-| /api/user/all                      | GET    | userController     | getAllUsers    | Get all users' data               |
+| /api/user/all                     | GET    | userController     | getAllUsers    | Get all users' data               |
 | /api/user/:id                      | GET    | userController     | getUser        | Get a user's info                 |
 | /api/user/create               | POST  | userController     | createUser     | Create a user's info              |
 | /api/user/:id/update               | PATCH  | userController     | updateUser     | Update a user's info              |

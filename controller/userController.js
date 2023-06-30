@@ -66,7 +66,7 @@ const userController = {
   },
 
   /**
-   * Update a user
+   * Update an user
    * @param {string} pseudo - The pseudo of the user
    * @param {string} firstname - The name of the user
    * @param {string} lastname - The firstname of the user
