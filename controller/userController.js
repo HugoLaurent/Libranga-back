@@ -23,7 +23,9 @@ const userController = {
       const result = await db.query(`SELECT * FROM "user" WHERE user_id = $1`, [
         req.params.id,
       ]);
-      res.json(result.rows);
+      result.rows.length === 0
+        ? res.status(404).send("There is no user with this id")
+        : res.json(result.rows);
       console.log(result.rows);
     } catch (err) {
       console.log(err);

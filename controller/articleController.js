@@ -24,7 +24,9 @@ const articleController = {
         `SELECT * FROM "article" WHERE article_id = $1`,
         [req.params.id]
       );
-      res.json(result.rows);
+      result.rows.length === 0
+        ? res.status(404).send("There is no article with this id")
+        : res.json(result.rows);
       console.log(result.rows);
     } catch (err) {
       console.log(err);
