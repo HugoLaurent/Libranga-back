@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/sequelize");
+const bcrypt = require("bcrypt");
 
 const User = sequelize.define(
   "User",
@@ -28,6 +29,10 @@ const User = sequelize.define(
     password: {
       type: DataTypes.STRING(100),
       allowNull: false,
+      set(value) {
+        const hashedPassword = bcrypt.hashSync(value, 10);
+        this.setDataValue("password", hashedPassword);
+      },
     },
     age: {
       type: DataTypes.INTEGER,
