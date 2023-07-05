@@ -1,3 +1,4 @@
+const Comment = require("../models/Comment");
 const { User, Article } = require("../models/index");
 
 const joinController = {
@@ -22,7 +23,7 @@ const joinController = {
     const article_id = req.params.id;
 
     try {
-      const articles = await Article.findAll({
+      const articles = await Comment.findAll({
         where: {
           article_id: article_id,
         },
