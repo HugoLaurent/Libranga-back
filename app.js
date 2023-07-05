@@ -2,6 +2,7 @@ const express = require("express");
 const routerPublic = require("./router/routerPublic");
 
 const app = express();
+
 // Définissez vos routes et middleware ici
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
