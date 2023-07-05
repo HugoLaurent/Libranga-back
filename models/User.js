@@ -2,6 +2,8 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../config/sequelize");
 const bcrypt = require("bcrypt");
 
+const Article = require("./Article");
+
 const User = sequelize.define(
   "User",
   {
@@ -48,5 +50,7 @@ const User = sequelize.define(
     timestamps: false,
   }
 );
+
+User.hasMany(Article, { foreignKey: "user_id" });
 
 module.exports = User;

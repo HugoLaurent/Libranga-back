@@ -4,6 +4,7 @@ const userController = require("../controller/userController");
 const articleController = require("../controller/articleController");
 const commentController = require("../controller/commentController");
 const categoryController = require("../controller/categoryController");
+const joinController = require("../controller/joinController");
 
 const routerPublic = express.Router();
 
@@ -32,6 +33,12 @@ routerPublic.put("/api/category/:id/update", categoryController.updateCategory);
 routerPublic.delete(
   "/api/category/:id/delete",
   categoryController.deleteCategory
+);
+
+routerPublic.get("/api/user/:id/article", joinController.getArticlesByUser);
+routerPublic.get(
+  "/api/article/:id/comment",
+  joinController.getCommentsByArticle
 );
 
 module.exports = routerPublic;
