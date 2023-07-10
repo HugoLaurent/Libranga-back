@@ -11,12 +11,16 @@ const Article = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
+    manga: {
+      type: DataTypes.STRING(128),
+      allowNull: false,
+    },
     title: {
       type: DataTypes.STRING(128),
       allowNull: false,
     },
     content: {
-      type: DataTypes.STRING(255),
+      type: DataTypes.STRING(1000),
       allowNull: false,
     },
     likes: {

@@ -2,7 +2,7 @@
   "name": "libranga-back",
   "version": "1.0.0",
   "description": "Libranga Blog is a web application dedicated to manga enthusiasts. It provides a platform for users to share and explore articles related to manga and its various genres.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

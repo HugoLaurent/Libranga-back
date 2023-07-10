@@ -15,6 +15,7 @@ routerPublic.put("/api/user/:id/update", userController.updateUser);
 routerPublic.delete("/api/user/:id/delete", userController.deleteUser);
 
 routerPublic.get("/api/article/all", articleController.getAllArticles);
+routerPublic.get("/api/article/like", articleController.getArticleByLike);
 routerPublic.get("/api/article/:id", articleController.getArticle);
 routerPublic.post("/api/article/create", articleController.createArticle);
 routerPublic.put("/api/article/:id/update", articleController.updateArticle);

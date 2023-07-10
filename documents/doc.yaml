@@ -12,7 +12,7 @@ paths:
       summary: Récupérer toutes les données des articles
       operationId: getAllArticles
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/article/{id}:
     get:
@@ -28,7 +28,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/article/create:
     post:
@@ -37,7 +37,7 @@ paths:
       summary: Créer un article
       operationId: createArticle
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/article/{id}/update:
     patch:
@@ -53,7 +53,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/article/{id}/delete:
     delete:
@@ -69,7 +69,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/comment/all:
     get:
@@ -78,7 +78,7 @@ paths:
       summary: Récupérer toutes les données des commentaires
       operationId: getAllComments
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/comment/{id}:
     get:
@@ -94,7 +94,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/comment/create:
     post:
@@ -103,7 +103,7 @@ paths:
       summary: Créer un commentaire
       operationId: createComment
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/comment/{id}/update:
     patch:
@@ -119,7 +119,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/comment/{id}/delete:
     delete:
@@ -135,7 +135,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/category/all:
     get:
@@ -144,7 +144,7 @@ paths:
       summary: Récupérer toutes les données des catégories
       operationId: getAllCategories
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/category/{id}:
     get:
@@ -160,7 +160,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/admin/{id}/promote:
     patch:
@@ -176,7 +176,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/admin/{id}/demote:
     patch:
@@ -192,7 +192,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/admin/user/{id}/update:
     patch:
@@ -208,7 +208,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/admin/user/{id}/delete:
     delete:
@@ -224,7 +224,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/admin/article/{id}/update:
     patch:
@@ -240,7 +240,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
   /api/admin/article/{id}/delete:
     delete:
@@ -256,7 +256,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
 
   /api/admin/comment/{id}/delete:
@@ -273,6 +273,5 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Opération réussie
-

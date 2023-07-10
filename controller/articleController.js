@@ -1,11 +1,50 @@
 const Article = require("../models/Article");
+const User = require("../models/User");
 
 const articleController = {
   getAllArticles: async (req, res) => {
     try {
       const articles = await Article.findAll();
-      res.json(articles);
-      console.log(articles);
+      const articlesWithUserNames = [];
+
+      for (const article of articles) {
+        const user = await User.findByPk(article.user_id);
+        const articleWithUserName = {
+          ...article.toJSON(),
+          pseudo: user ? user.pseudo : "Unknown User",
+        };
+        articlesWithUserNames.push(articleWithUserName);
+      }
+
+      res.json(articlesWithUserNames);
+    } catch (error) {
+      res.status(500).send("Error while retrieving articles");
+    }
+  },
+
+  // Get the article with the most likes
+  // Méthode pour récupérer l'article trié par likes
+  getArticleByLike: async (req, res) => {
+    try {
+      const articles = await Article.findAll({
+        order: [["likes", "DESC"]],
+      });
+
+      if (articles.length > 0) {
+        const article = articles[0];
+        const userId = article.user_id;
+
+        const user = await User.findByPk(userId);
+
+        if (user) {
+          const pseudo = user.pseudo;
+          res.json({ article, pseudo });
+        } else {
+          res.status(404).send("User not found");
+        }
+      } else {
+        res.status(404).send("No articles found");
+      }
     } catch (error) {
       console.log(error);
       res.status(500).send("Error while retrieving articles");
