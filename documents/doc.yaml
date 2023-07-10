@@ -1,0 +1,277 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: API for Libranga
+  description: The Libranga API is an application programming interface (API) that provides access to the features of an online library management application called Libranga. This API offers various functionalities to manage users, books, borrowings, and comments in a virtual library.
+
+paths:
+  /api/article/all:
+    get:
+      tags:
+        - article
+      summary: Récupérer toutes les données des articles
+      operationId: getAllArticles
+      responses:
+        "200":
+          description: Opération réussie
+  /api/article/{id}:
+    get:
+      tags:
+        - article
+      summary: Récupérer les données d'un article
+      operationId: getArticle
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'article à récupérer
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/article/create:
+    post:
+      tags:
+        - article
+      summary: Créer un article
+      operationId: createArticle
+      responses:
+        "200":
+          description: Opération réussie
+  /api/article/{id}/update:
+    patch:
+      tags:
+        - article
+      summary: Mettre à jour un article
+      operationId: updateArticle
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'article à mettre à jour
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/article/{id}/delete:
+    delete:
+      tags:
+        - article
+      summary: Supprimer un article
+      operationId: deleteArticle
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'article à supprimer
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/comment/all:
+    get:
+      tags:
+        - comment
+      summary: Récupérer toutes les données des commentaires
+      operationId: getAllComments
+      responses:
+        "200":
+          description: Opération réussie
+  /api/comment/{id}:
+    get:
+      tags:
+        - comment
+      summary: Récupérer les données d'un commentaire
+      operationId: getComment
+      parameters:
+        - name: id
+          in: path
+          description: ID du commentaire à récupérer
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/comment/create:
+    post:
+      tags:
+        - comment
+      summary: Créer un commentaire
+      operationId: createComment
+      responses:
+        "200":
+          description: Opération réussie
+  /api/comment/{id}/update:
+    patch:
+      tags:
+        - comment
+      summary: Mettre à jour un commentaire
+      operationId: updateComment
+      parameters:
+        - name: id
+          in: path
+          description: ID du commentaire à mettre à jour
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/comment/{id}/delete:
+    delete:
+      tags:
+        - comment
+      summary: Supprimer un commentaire
+      operationId: deleteComment
+      parameters:
+        - name: id
+          in: path
+          description: ID du commentaire à supprimer
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/category/all:
+    get:
+      tags:
+        - category
+      summary: Récupérer toutes les données des catégories
+      operationId: getAllCategories
+      responses:
+        "200":
+          description: Opération réussie
+  /api/category/{id}:
+    get:
+      tags:
+        - category
+      summary: Récupérer les données d'une catégorie
+      operationId: getCategory
+      parameters:
+        - name: id
+          in: path
+          description: ID de la catégorie à récupérer
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/admin/{id}/promote:
+    patch:
+      tags:
+        - admin
+      summary: Promouvoir un utilisateur en administrateur
+      operationId: promoteUserToAdmin
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'utilisateur à promouvoir
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/admin/{id}/demote:
+    patch:
+      tags:
+        - admin
+      summary: Rétrograder un administrateur en utilisateur
+      operationId: demoteAdminToUser
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'administrateur à rétrograder
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/admin/user/{id}/update:
+    patch:
+      tags:
+        - admin
+      summary: Mettre à jour un utilisateur en tant qu'administrateur
+      operationId: updateAdminUser
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'utilisateur à mettre à jour
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/admin/user/{id}/delete:
+    delete:
+      tags:
+        - admin
+      summary: Supprimer un utilisateur en tant qu'administrateur
+      operationId: deleteAdminUser
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'utilisateur à supprimer
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/admin/article/{id}/update:
+    patch:
+      tags:
+        - admin
+      summary: Mettre à jour un article en tant qu'administrateur
+      operationId: updateAdminArticle
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'article à mettre à jour
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+  /api/admin/article/{id}/delete:
+    delete:
+      tags:
+        - admin
+      summary: Supprimer un article en tant qu'administrateur
+      operationId: deleteAdminArticle
+      parameters:
+        - name: id
+          in: path
+          description: ID de l'article à supprimer
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
+
+  /api/admin/comment/{id}/delete:
+    delete:
+      tags:
+        - admin
+      summary: Supprimer un commentaire en tant qu'administrateur
+      operationId: deleteAdminComment
+      parameters:
+        - name: id
+          in: path
+          description: ID du commentaire à supprimer
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Opération réussie
