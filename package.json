@@ -4,7 +4,9 @@
   "description": "Libranga Blog is a web application dedicated to manga enthusiasts. It provides a platform for users to share and explore articles related to manga and its various genres.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "resetDB": "node ./data/resetDb.js && node ./data/createTable.js && node ./data/createPopulate.js" 
+    
   },
   "repository": {
     "type": "git",
