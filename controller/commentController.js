@@ -6,9 +6,7 @@ const User = require("../models/User");
 const commentController = {
   getAllComments: async (req, res) => {
     try {
-      const comments = await Comment.findAll({
-        include: User,
-      });
+      const comments = await Comment.findAll();
 
       if (comments.length > 0) {
         const commentData = comments.map((comment) => {

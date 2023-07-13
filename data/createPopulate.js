@@ -102,90 +102,85 @@ async function populateTables() {
 
   await Comment.bulkCreate([
     {
-      title: "Lorem",
-      content:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      title: "One Piece",
+      content: "Ah, j'adore One Piece ! Luffy est mon personnage préféré.",
       likes: 5,
       edited: false,
       user_id: 1,
       article_id: 1,
     },
     {
-      title: "Dolor",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "Naruto",
+      content: "Naruto est une série géniale, mais je n'ai pas encore tout lu.",
       likes: 2,
       edited: false,
       user_id: 2,
       article_id: 1,
     },
     {
-      title: "Amet",
-      content:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      title: "Attack on Titan",
+      content: "Wow, Attack on Titan m'a totalement captivé !",
       likes: 3,
       edited: false,
       user_id: 3,
       article_id: 1,
     },
     {
-      title: "Consectetur",
-      content:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      title: "One Punch Man",
+      content: "One Punch Man est hilarant ! Saitama est tellement puissant.",
       likes: 1,
       edited: false,
       user_id: 4,
       article_id: 2,
     },
     {
-      title: "Adipiscing",
+      title: "My Hero Academia",
       content:
-        "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Je suis un grand fan de My Hero Academia ! Les pouvoirs des personnages sont incroyables.",
       likes: 4,
       edited: false,
       user_id: 5,
       article_id: 2,
     },
     {
-      title: "Elit",
+      title: "Demon Slayer",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Demon Slayer est l'un de mes mangas préférés ! L'animation est magnifique.",
       likes: 0,
       edited: false,
       user_id: 6,
       article_id: 2,
     },
     {
-      title: "Etiam",
-      content:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      title: "Dragon Ball",
+      content: "Dragon Ball est un classique absolu ! Goku est le meilleur.",
       likes: 2,
       edited: false,
       user_id: 7,
       article_id: 3,
     },
     {
-      title: "Faucibus",
+      title: "Bleach",
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "J'ai beaucoup aimé Bleach, mais je n'ai pas encore terminé la série.",
       likes: 3,
       edited: false,
       user_id: 8,
       article_id: 3,
     },
     {
-      title: "Vitae",
+      title: "Fullmetal Alchemist",
       content:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "Fullmetal Alchemist est une œuvre d'art ! Les personnages et l'histoire sont incroyables.",
       likes: 1,
       edited: false,
       user_id: 9,
       article_id: 3,
     },
     {
-      title: "Ullamcorper",
+      title: "Death Note",
       content:
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "Death Note est tellement captivant ! Le duel intellectuel entre Light et L est fascinant.",
       likes: 5,
       edited: false,
       user_id: 10,
