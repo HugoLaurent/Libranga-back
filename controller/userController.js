@@ -1,9 +1,20 @@
 const User = require("../models/User");
+const Article = require("../models/Article");
+const Comment = require("../models/Comment");
 
 const userController = {
   getAllData: async (req, res) => {
     try {
-      const users = await User.findAll();
+      const users = await User.findAll({
+        include: [
+          {
+            model: Comment,
+          },
+          {
+            model: Article,
+          },
+        ],
+      });
       res.json(users);
       console.log(users);
     } catch (error) {

@@ -1,6 +1,9 @@
 const db = require("../db");
 
 const Category = require("../models/Category");
+const Article = require("../models/Article");
+const User = require("../models/User");
+const Comment = require("../models/Comment");
 
 const categoryController = {
   getAllCategories: async (req, res) => {
@@ -16,12 +19,18 @@ const categoryController = {
 
   getCategory: async (req, res) => {
     try {
-      const category = await Category.findByPk(req.params.id);
+      const category = await Category.findByPk(req.params.id, {
+        include: [
+          {
+            model: Article,
+            include: [User, Comment], // Inclure le modèle User associé à l'article
+          },
+        ],
+      });
       if (!category) {
         res.status(404).send("There is no category with this id");
       } else {
         res.json(category);
-        console.log(category);
       }
     } catch (error) {
       console.log(error);

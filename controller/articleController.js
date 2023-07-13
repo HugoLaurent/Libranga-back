@@ -1,10 +1,11 @@
 const Article = require("../models/Article");
 const User = require("../models/User");
+const Comment = require("../models/Comment");
 
 const articleController = {
   getAllArticles: async (req, res) => {
     try {
-      const articles = await Article.findAll();
+      const articles = await Article.findAll({ include: Comment });
       const articlesWithUserNames = [];
 
       for (const article of articles) {
