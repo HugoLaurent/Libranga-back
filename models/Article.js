@@ -35,6 +35,10 @@ const Article = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    category_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     tableName: "article",

@@ -7,17 +7,17 @@ const commentController = {
   getAllComments: async (req, res) => {
     try {
       const comments = await Comment.findAll();
+      const commentWithUserNames = [];
 
-      if (comments.length > 0) {
-        const commentData = comments.map((comment) => {
-          const pseudo = comment.User ? comment.User.pseudo : "User not found";
-          return { comment, pseudo };
-        });
-
-        res.json(commentData);
-      } else {
-        res.status(404).send("No comments found");
+      for (const comment of comments) {
+        const user = await User.findByPk(comment.user_id);
+        const commentWithUserName = {
+          ...comment.toJSON(),
+          pseudo: user ? user.pseudo : "Unknown User",
+        };
+        commentWithUserNames.push(commentWithUserName);
       }
+      res.json(commentWithUserNames);
     } catch (error) {
       console.log(error);
       res.status(500).send("Error while retrieving comments");
