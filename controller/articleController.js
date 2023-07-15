@@ -71,6 +71,8 @@ const articleController = {
     try {
       const newArticle = await Article.create({
         title: req.body.title,
+        manga: req.body.manga,
+        category_id: req.body.category_id,
         content: req.body.content,
         likes: req.body.likes,
         edited: req.body.edited,
