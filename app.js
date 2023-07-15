@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const routerPublic = require("./router/routerPublic");
+const routerPrivate = require("./router/routerPrivate");
 
 const app = express();
 

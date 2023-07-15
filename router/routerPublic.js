@@ -5,6 +5,7 @@ const articleController = require("../controller/articleController");
 const commentController = require("../controller/commentController");
 const categoryController = require("../controller/categoryController");
 const joinController = require("../controller/joinController");
+const loginController = require("../controller/loginController");
 
 const routerPublic = express.Router();
 
@@ -17,6 +18,7 @@ routerPublic.delete("/api/user/:id/delete", userController.deleteUser);
 routerPublic.get("/api/article/all", articleController.getAllArticles);
 routerPublic.get("/api/article/like", articleController.getArticleByLike);
 routerPublic.get("/api/article/:id", articleController.getArticle);
+routerPublic.get("/api/article/byname/:id", articleController.getArticleByLike);
 routerPublic.post("/api/article/create", articleController.createArticle);
 routerPublic.put("/api/article/:id/update", articleController.updateArticle);
 routerPublic.delete("/api/article/:id/delete", articleController.deleteArticle);
@@ -41,5 +43,7 @@ routerPublic.get(
   "/api/article/:id/comment",
   joinController.getCommentsByArticle
 );
+
+routerPublic.post("/api/user/login", loginController.getLoggedUser);
 
 module.exports = routerPublic;
