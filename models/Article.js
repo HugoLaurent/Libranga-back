@@ -39,6 +39,10 @@ const Article = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    url: {
+      type: DataTypes.STRING(128),
+      allowNull: true,
+    },
   },
   {
     tableName: "article",
