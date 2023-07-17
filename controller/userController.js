@@ -40,6 +40,20 @@ const userController = {
 
   addUser: async (req, res) => {
     try {
+      const pseudo = req.body.pseudo;
+      const email = req.body.email;
+
+      const existingUserPseudo = await User.findOne({ where: { pseudo } });
+      const existingUserEmail = await User.findOne({ where: { email } });
+
+      if (existingUserPseudo) {
+        return res
+          .status(400)
+          .send({ message: "This pseudo is already taken" });
+      } else if (existingUserEmail) {
+        return res.status(400).send({ message: "This email is already taken" });
+      }
+
       const newUser = await User.create({
         pseudo: req.body.pseudo,
         firstname: req.body.firstname,
@@ -54,7 +68,7 @@ const userController = {
       console.log("User added successfully");
     } catch (error) {
       console.log(error);
-      res.status(500).send("Error while adding the user");
+      res.status(500).json({ error: error.message });
     }
   },
 
