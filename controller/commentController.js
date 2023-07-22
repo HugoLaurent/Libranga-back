@@ -47,9 +47,10 @@ const commentController = {
         likes: req.body.likes,
         user_id: req.body.user_id,
         article_id: req.body.article_id,
+        pseudo: req.body.pseudo,
       });
 
-      res.json({ comment_id: newComment.comment_id });
+      res.json(newComment);
       console.log("Comment added successfully");
     } catch (error) {
       console.log(error);

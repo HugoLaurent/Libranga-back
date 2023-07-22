@@ -29,6 +29,10 @@ const Comment = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    pseudo: {
+      type: DataTypes.STRING(255),
+      allowNull: false,
+    },
   },
   {
     tableName: "comment",
