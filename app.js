@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.DB_PORT || 3500;
 
 // Définissez vos routes et middleware ici
 app.use(express.json());
