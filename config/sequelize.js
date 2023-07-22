@@ -1,15 +1,14 @@
 const Sequelize = require("sequelize");
 
-const DB_HOST = process.env.DB_HOST;
-const DB_USER = process.env.DB_USER;
-const DB_PASSWORD = process.env.DB_PASSWORD;
-const DB_NAME = process.env.DB_NAME;
-const DB_PORT = process.env.DB_PORT;
+const dbHost = process.env.DB_HOST;
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASSWORD;
+const dbName = process.env.DB_NAME;
 
-const sequelize = new Sequelize(DB_NAME, DB_PASSWORD, DB_USER, {
-  host: DB_HOST,
+const sequelize = new Sequelize("libranga", "libranga", "libranga", {
+  host: "localhost",
   dialect: "postgres",
-  port: DB_PORT,
+  port: 5432,
   define: {
     createdAt: "created_at",
     updatedAt: "updated_at",
