@@ -9,7 +9,7 @@ const DB_PORT = process.env.DB_PORT;
 const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
   host: DB_HOST,
   dialect: "postgres",
-  port: 5432,
+  port: 5433,
   define: {
     createdAt: "created_at",
     updatedAt: "updated_at",
