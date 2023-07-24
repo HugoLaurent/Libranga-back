@@ -5,13 +5,13 @@ DROP TABLE IF EXISTS "user";
 
 CREATE TABLE IF NOT EXISTS "user" (
     "user_id" SERIAL PRIMARY KEY,
-    "pseudo" VARCHAR(128),
-    "firstname" VARCHAR(128),
-    "lastname" VARCHAR(128),
-    "email" VARCHAR(255),
-    "password" VARCHAR(255),
+    "pseudo" VARCHAR(50),
+    "firstname" VARCHAR(50),
+    "lastname" VARCHAR(50),
+    "email" VARCHAR(50),
+    "password" VARCHAR(50),
     "age" INTEGER,
-    "role" INTEGER
+    "role" INTEGER DEFAULT 1
 );
 
 INSERT INTO "user" ("pseudo", "firstname", "lastname", "email", "password", "age", "role") VALUES
